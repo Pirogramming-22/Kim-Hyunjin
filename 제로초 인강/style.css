@@ -1,3 +1,7 @@
+html, body{
+  margin: 0;
+  padding: 0;
+}
 #wrap{
   text-align: center;
 }
@@ -6,6 +10,20 @@
   background-color: magenta;
   display: inline-block;
   /*block인 특징을 가진 요소들은 무조건 100% 면적을 활용한다. 따라서, 넓이를 강제로 축소시키면 margin이 그 나머지 부분을 채운다.*/
+}
+#header-hamburger{
+  margin-top: 5px;
+  background-color: aqua;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+}
+#header-naverpay{
+  margin-top: 5px;
+  background-color: aqua;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
 }
 #main{
   height:200px;
