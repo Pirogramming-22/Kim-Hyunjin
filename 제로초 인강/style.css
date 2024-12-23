@@ -80,16 +80,31 @@ html, body{
 }
 #header{
   text-align: left;
+  position: relative;
 }
 #header-hamburger{
-  margin-top: 5px;
+  position: absolute;
+  top: 5px;
+  left: -12px;
   padding: 8px;
   display: inline-block;
   background: none;
   border: none;
   cursor: pointer;
 }
-#header-hamburger:hover{
+/*
+position relative -> 원래 위치를 기준으로 움직인다.
+position sticiy -> absolute였다가 어느 순간부터 fixed처럼 움직인다. 
+position absolute -> 부모 중 position static이 아닌 것 중 하나를 기준 삼아 움직인다.
+position fixed -> viewport 기준
+*/
+#header-hamburger:hover::before{
+  position: absolute;
+  content: ' ';
+  left: 1px;
+  top: 1px;
+  width: 44px;
+  height: 44px;
   background-color: var(--color_option_bg);
   border-radius: 50%;
 }
@@ -101,14 +116,22 @@ html, body{
   height: 32px;
 }
 #header-naverpay{
-  margin-top: 5px;
+  position: absolute;
+  top: 5px;
+  left: 41px;
   padding: 8px;
   display: inline-block;
   background: none;
   border: none;
   cursor: pointer;
 }
-#header-naverpay:hover{
+#header-naverpay:hover::before{
+  position: absolute;
+  content: ' ';
+  left: 1px;
+  top: 1px;
+  width: 44px;
+  height: 44px;
   background-color: var(--color_option_bg);
   border-radius: 50%;
 }
