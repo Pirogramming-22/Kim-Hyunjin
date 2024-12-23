@@ -92,6 +92,15 @@ html, body{
   border: none;
   cursor: pointer;
 }
+.blind{
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+/*시각 장애인을 위한 서비스*/
 /*
 position relative -> 원래 위치를 기준으로 움직인다.
 position sticiy -> absolute였다가 어느 순간부터 fixed처럼 움직인다. 
@@ -101,6 +110,7 @@ position fixed -> viewport 기준
 #header-hamburger:hover::before{
   position: absolute;
   content: ' ';
+  z-index: 0;
   left: 1px;
   top: 1px;
   width: 44px;
@@ -112,6 +122,8 @@ position fixed -> viewport 기준
   background-image: url(./sp_main.png);
   background-position: -311px -166px;
   background-size: 463px 440px;
+  position: relative;
+  z-index: 1;
   width: 32px;
   height: 32px;
 }
@@ -128,6 +140,7 @@ position fixed -> viewport 기준
 #header-naverpay:hover::before{
   position: absolute;
   content: ' ';
+  z-index: 0;
   left: 1px;
   top: 1px;
   width: 44px;
@@ -139,6 +152,8 @@ position fixed -> viewport 기준
   background-image: url(./sp_main.png);
   background-position: -248px -260px;
   background-size: 463px 440px;
+  position: relative;
+  z-index: 1;
   width: 32px;
   height: 32px;
 }
