@@ -412,6 +412,62 @@ section[id^=main]{
 }
 #main-login{
   height: 164px;
+  padding: 21px 20px 18px;
+  font-size: 1.4rem;
+  display: flex;
+  flex-flow: column;
+}
+#main-login a{
+  text-decoration: none;
+}
+#main-login > div:first-of-type{
+  line-height: 20px;
+}
+#main-login-btn{
+  margin-top: 13px;
+  padding: 17px 0;
+  border: 1px solid rgba(0,0,0,.06);
+  height: 56px;
+  border-radius: 4px;
+  background-color: #03c75a;
+  color:white;
+  vertical-align: -1px;
+  margin-bottom: 16px;
+}
+#main-login-btn i{ 
+  background-image: url(./sp_main.png);
+  background-size: 452px 436px;
+  background-position: 1px -298px;
+  background-repeat: no-repeat;
+  width: 72px;
+  height: 14px;
+  display: inline-block;
+  margin: 3px 8px 0 0;
+  vertical-align: top;
+}
+}
+#main-login > div:last-of-type{
+  font-size: 1.3rem;
+}
+#main-login > div:last-of-type a{
+  color: var(--color_caption2);
+  letter-spacing: -0.4px;
+}
+#main-login > div:last-of-type a:hover{
+  text-decoration: underline;
+}
+#main-login > div:last-of-type > a:nth-of-type(2)::before,#main-login > div:last-of-type > a:nth-of-type(2)::after{
+  content: ' ';
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background-color: #d3d5d7;
+  background-color: var(--color_dot_divider);
+  margin:4px 12px 0;
+}
+main-login > div:last-of-type a:first-of-type, main-login > div:last-of-type a:last-of-type{
+  position: relative;
+  top: 5px;
 }
 #main-right-ad{
   height: 240px;
