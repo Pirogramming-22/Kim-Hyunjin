@@ -189,6 +189,9 @@ position fixed -> viewport 기준
   border: 1px solid #03c75a;
   border-radius: 33px;
 }
+#search > form:hover{
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.12);
+}
 #special-input-logo{
   display: none;
 }
@@ -203,6 +206,12 @@ position fixed -> viewport 기준
   font-size: 2rem;
   z-index: 10;
   flex:2;
+}
+#search-input::placeholder{
+  color:white;
+}
+#search-input:focus::placeholder{
+  color: #e4e4e4
 }
 #search-right{
   flex: 1;
@@ -226,6 +235,9 @@ position fixed -> viewport 기준
   width: 24px;
   height: 14px;
 }
+#search-keyboard:hover::before{
+  filter: brightness(0.7);
+}
 #search-recent::before{
   content: "";
   display: block;
@@ -235,7 +247,6 @@ position fixed -> viewport 기준
   background-repeat: no-repeat;
   width: 10px;
   height: 6px;
-  padding: 0;
 }
 #search-button::before{
   content: "";
