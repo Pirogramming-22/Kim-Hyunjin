@@ -64,7 +64,9 @@
   --color_shop: #9858f5;
   --color_shop_rgb: 152, 88, 245;
 }
-
+*{
+  box-sizing: border-box;
+}
 html, body{
   margin: 0;
   padding: 0;
@@ -82,16 +84,6 @@ html, body{
   text-align: left;
   position: relative;
 }
-#header-hamburger{
-  position: absolute;
-  top: 5px;
-  left: -12px;
-  padding: 8px;
-  display: inline-block;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
 .blind{
   position: absolute;
   clip: rect(0 0 0 0);
@@ -107,37 +99,19 @@ position sticiy -> absolute였다가 어느 순간부터 fixed처럼 움직인�
 position absolute -> 부모 중 position static이 아닌 것 중 하나를 기준 삼아 움직인다.
 position fixed -> viewport 기준
 */
-#header-hamburger:hover::before{
-  position: absolute;
-  content: ' ';
-  z-index: 0;
-  left: 1px;
-  top: 1px;
-  width: 44px;
-  height: 44px;
-  background-color: var(--color_option_bg);
-  border-radius: 50%;
-}
-#header-hamburger > div{
-  background-image: url(./sp_main.png);
-  background-position: -311px -166px;
-  background-size: 463px 440px;
-  position: relative;
-  z-index: 1;
-  width: 32px;
-  height: 32px;
-}
-#header-naverpay{
+
+#header-hamburger, #header-naverpay, #header-notify, #header-talk, #header-shopping{
   position: absolute;
   top: 5px;
-  left: 41px;
-  padding: 8px;
+  padding: 8px 8px;
+  width: 48px;
+  height: 48px;
   display: inline-block;
   background: none;
   border: none;
   cursor: pointer;
 }
-#header-naverpay:hover::before{
+#header-hamburger:hover::before, #header-naverpay:hover::before,#header-talk:hover::before, #header-notify:hover::before, #header-shopping:hover::before{
   position: absolute;
   content: ' ';
   z-index: 0;
@@ -148,14 +122,51 @@ position fixed -> viewport 기준
   background-color: var(--color_option_bg);
   border-radius: 50%;
 }
-#header-naverpay > div{
-  background-image: url(./sp_main.png);
-  background-position: -248px -260px;
-  background-size: 463px 440px;
+#header-hamburger > div, #header-naverpay > div, #header-talk > div,#header-notify > div, #header-shopping > div{
   position: relative;
   z-index: 1;
   width: 32px;
   height: 32px;
+}
+#header-hamburger > div{
+  background-image: url(./sp_main.png);
+  background-position: -311px -166px;
+  background-size: 463px 440px;
+}
+#header-hamburger{
+  left: -12px;
+}
+#header-naverpay{
+  left: 41px;
+}
+#header-naverpay > div{
+  background-image: url(./sp_main.png);
+  background-position: -248px -260px;
+  background-size: 463px 440px;
+}
+#header-talk{
+  right: 94px;
+}
+#header-talk > div{
+  background-image: url(./sp_main.png);
+  background-position: -99px -316px;
+  background-size: 463px 440px;
+}
+#header-notify{
+  right: 42px;
+}
+#header-notify > div{
+  background-image: url(./sp_main.png);
+  background-position: -311px -232px;
+  background-size: 463px 440px;
+}
+#header-shopping{
+  right: -10px;
+}
+#header-shopping > div{
+  background-image: url(./sp_main.png);
+  background-position: -33px -316px;
+  background-size: 463px 440px;
 }
 #main{
   height:200px;
