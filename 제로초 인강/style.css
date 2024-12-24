@@ -67,11 +67,16 @@
 *{
   box-sizing: border-box;
 }
-html, body, form{
+html, body{
   margin: 0;
   padding: 0;
   font-size: 10px;
   font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+  letter-spacing: -0.4px;
+}
+form,ul {
+  margin: 0;
+  padding: 0;
 }
 #wrap{
   text-align: center;
@@ -272,6 +277,9 @@ position fixed -> viewport 기준
   width: 25px;
   height: 25px;
 }
+#nav{
+  margin-top: 12px;
+}
 #nav > ul{
   display: flex;
   list-style: none;
@@ -282,9 +290,30 @@ position fixed -> viewport 기준
 #nav li{
   margin-left: -3px;
   width: 64px;
+  display: flex;
+  justify-content: center;
 }
 #nav > ul > li > a{
   text-decoration: none;
+  text-align: center;
+}
+#nav a div{
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+#nav a div::after{
+  content: " ";
+  position: relative;
+  z-index: 1;
+  margin: 2px;
+  display:inline-block;
+  background-image: url(./sp_main.png);
+  background-size: 452px 436px;
+  /*background-position: -200px -215px;*/
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
 }
 #nav > a:visited{
   color: black;
@@ -292,35 +321,57 @@ position fixed -> viewport 기준
 #nav li:nth-of-type(1){
   margin-left: 0;
 }
-#nav li:nth-of-type(2){
-  
+#nav li a div::before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: -1px;
+  left: -3px;
+  background-image: url(./sp_main.png);
+  background-size: 452px 436px;
+  background-position: -149px -141px;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
 }
-#nav li:nth-of-type(3){
-  
+#nav li:nth-of-type(1) a div::after{
+  background-position: -200px -217px;
 }
-#nav li:nth-of-type(4){
-  
+#nav li:nth-of-type(2) a div::after{
+  background-position: -41px -219px;
 }
-#nav li:nth-of-type(5){
-  
+#nav li:nth-of-type(3) a div::after{
+  background-position: 0px -219px;
 }
-#nav li:nth-of-type(6){
-  
+#nav li:nth-of-type(4) a div::after{
+  background-position: -41px -258px;
 }
-#nav li:nth-of-type(7){
-  
+#nav li:nth-of-type(5) a div::after{
+  background-position: -263px -203px;
 }
-#nav li:nth-of-type(8){
-  
+#nav li:nth-of-type(6) a div::after{
+  background-position: -120px -258px;
 }
-#nav li:nth-of-type(9){
-  
+#nav li:nth-of-type(7) a div::after{
+  background-position: 0px -260px;
 }
-#nav li:nth-of-type(10){
-  
+#nav li:nth-of-type(8) a div::after{
+  background-position: -262px 0px;
 }
-#nav li:nth-of-type(11){
-  
+#nav li:nth-of-type(9) a div::after{
+  background-position: -160px -258px;
+}
+#nav li:nth-of-type(10) a div::after{
+  background-image: url(./chzzk_icon.png);
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+}
+#nav li:nth-of-type(11) a div::after{
+  background-position: -263px -162px;
+}
+#nav li a span{
+  display: inline-block;
+  margin-top:7px;
 }
 #main{
   height:200px;
