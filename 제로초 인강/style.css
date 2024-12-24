@@ -67,7 +67,7 @@
 *{
   box-sizing: border-box;
 }
-html, body{
+html, body, form{
   margin: 0;
   padding: 0;
 }
@@ -83,6 +83,7 @@ html, body{
 #header{
   text-align: left;
   position: relative;
+  height: 64px;
 }
 .blind{
   position: absolute;
@@ -167,6 +168,46 @@ position fixed -> viewport 기준
   background-image: url(./sp_main.png);
   background-position: -33px -316px;
   background-size: 463px 440px;
+}
+#event_logo{
+  position: absolute;
+  transform: scale(0.5);
+  transform-origin: left top;
+  top: 0px;
+  left: 0px;
+}
+#event_logo > img{
+  vertical-align: top;
+}
+#search > form{
+  display: inline-block;
+  width: 706px;
+  height: 58px;
+  border: 1px solid #03c75a;
+  border-radius: 33px;
+}
+#special-input-logo{
+  display: none;
+}
+#search > form > input{
+  width: 480px;
+  height: 100%;
+  padding: 17px 0px;
+  border: none;
+  outline: none;
+  text-align: left;
+}
+#search_box{
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 61px;
+}
+#auto_complete{
+
+}
+#btn_search{
+
 }
 #main{
   height:200px;
