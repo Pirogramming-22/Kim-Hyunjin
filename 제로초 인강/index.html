@@ -17,7 +17,7 @@
 <body>
   <div id="wrap">
     <div id="wrap-center">
-      <div id="header">
+      <header id="header">
         <button id="header-hamburger">
           <!--::before 이 셋끼리만 z index 적용-->
           <div></div>
@@ -53,7 +53,7 @@
         <a id="event_logo" href="https://search.naver.com/search.naver?where=nexearch&sm=top_clk.splogo&fbm=0&ie=utf8&query=%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4" target="_blank">
           <img src="sp_main`.png" alt="크리스마스이브">
         </a>
-      </div>
+      </header>
       <div id="search">
         <h1 id="special-input-logo">
           <a href="#"><img src="./logo.png" width="58" height="58" alt="NAVER"></a>
@@ -74,7 +74,7 @@
           </div>
         </form>
       </div>
-      <div id="nav">
+      <nav id="nav">
         <ul>
           <li>
             <a href="">
@@ -143,8 +143,26 @@
             </a>
           </li>
         </ul>
-      </div>
-      <div id="main"></div>
+      </nav>
+      <main id="main">
+        <div id="main-left">
+          <aside id="main-left-ad"></aside>
+          <section id="main-newstand"></section>
+          <section id="main-shopping"></section>
+        </div>
+        <div id="main-right">
+          <section id="main-login"></section>
+          <aside id="main-right-ad"></aside>
+          <section id="main-weather" class="main-weather_and_stack">
+            <header>날씨</header>
+            <div></div>
+          </section>
+          <section id="main-stock" class="main-weather_and_stack">
+            <header>증시</header>
+            <div></div>
+          </section>
+        </div>
+      </main>
     </div>
   </div>
 </body>
