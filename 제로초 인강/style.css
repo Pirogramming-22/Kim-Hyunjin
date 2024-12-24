@@ -202,7 +202,6 @@ position fixed -> viewport 기준
   height: 100%;
   border: none;
   outline: none;
-  font-weight: bold;
   font-size: 2rem;
   z-index: 10;
   flex:2;
@@ -213,6 +212,20 @@ position fixed -> viewport 기준
 #search-input:focus::placeholder{
   color: #e4e4e4
 }
+/*
+#search > form:focus-within #special-input-logo::after {
+  display: none;
+}
+#special-input-logo:: after {
+  content: ' ';
+  width: 1px;
+  height: 20px;
+  background-color: #e4e4e4;
+  position: absolute;
+  display: inline-block;
+  right: 0;
+  top: 20px;
+*/
 #search-right{
   flex: 1;
     display: flex;
