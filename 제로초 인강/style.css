@@ -181,6 +181,7 @@ position fixed -> viewport 기준
 }
 #search > form{
   display: inline-block;
+  text-align: left;
   width: 706px;
   height: 58px;
   border: 1px solid #03c75a;
@@ -189,25 +190,48 @@ position fixed -> viewport 기준
 #special-input-logo{
   display: none;
 }
-#search > form > input{
+#search-input{
   width: 480px;
-  height: 100%;
+  margin: 0px 0px 0px 28px;
   padding: 17px 0px;
+  height: 100%;
   border: none;
   outline: none;
-  text-align: left;
+  font-weight: bold;
+  font-size: 2rem;
 }
-#search_box{
+#search-right{
   display: inline-block;
-  position: absolute;
-  top: 0;
-  right: 61px;
 }
-#auto_complete{
-
+#search-keyboard::before{
+  content: "";
+  display: block;
+  background-image: url(./sp_main.png);
+  background-size: 452px 436px;
+  background-position: -144px -298px;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 14px;
 }
-#btn_search{
-
+#search-recent::before{
+  content: "";
+  display: block;
+  background-image: url(./sp_main.png);
+  background-size: 452px 436px;
+  background-position: -441px -424px;
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 6px;
+}
+#search-button::before{
+  content: "";
+  display: block;
+  background-image: url(./sp_main.png);
+  background-size: 452px 436px;
+  background-position: -395px -76px;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
 }
 #main{
   height:200px;

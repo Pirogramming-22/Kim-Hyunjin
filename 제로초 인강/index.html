@@ -50,25 +50,30 @@
           <!--::after-->
         </a>
         <!--자식 요소들이 position absolute로 정의되었기 때문에 부모인 header의 height는 0이 된다.-->
+        <a id="event_logo" href="https://search.naver.com/search.naver?where=nexearch&sm=top_clk.splogo&fbm=0&ie=utf8&query=%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4" target="_blank">
+          <img src="sp_main`.png" alt="크리스마스이브">
+        </a>
       </div>
-      <a id="event_logo" href="https://search.naver.com/search.naver?where=nexearch&sm=top_clk.splogo&fbm=0&ie=utf8&query=%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4" target="_blank">
-        <img src="sp_main`.png" alt="크리스마스이브">
-      </a>
       <div id="search">
+        <h1 id="special-input-logo">
+          <a href="#"><img src="./logo.png" width="58" height="58" alt="NAVER"></a>
+        </h1>
         <form action="">
-          <h1 id="special-input-logo"><a href="#"><img src="./logo.png" width="58" height="58" alt="NAVER"></a></h1>
-        <label for="search-input" class="blind">검색어 입력</label>
-        <input type="text" id="search-input">
-        <button class="blind">검색</button>
-        <div id="search_box">
-          <span class="blind">입력도구</span>
-        </button>
-        <button id="auto_complete"></button>
-        <button id="kbd_btn"></button>
-        </div>
-        <button id="btn_search"></button>
-      </form>
-    </div>
+          <label for="search-input" class="blind">검색어 입력</label>
+          <input type="text" id="search-input" placeholder="검색어를 입력하세요.">
+          <div id="search-right">
+            <button href="#" id="search-keyboard">
+              <span class="blind">입력도구</span>
+            </button>
+            <button href="#" id="search-recent">
+              <span class="blind">자동완성/최근검색어펼치기</span>
+            </button>
+            <button id="search-button">
+              <div><span class="blind">검색</span></div>
+            </button>
+          </div>
+        </form>
+      </div>
       <div id="nav"></div>
       <div id="main"></div>
     </div>
