@@ -1,0 +1,28 @@
+body{
+  color:white;
+}
+header, main{
+  background-color: black;
+}
+#menu-bar{
+  display: flex;
+}
+#menu-bar #logo{
+  padding: 10px 0;
+}
+#menu-bar #logo > img{
+  width: 50px;
+  height: 50px;
+  margin-left: 150px;
+  filter: invert(100%)
+}
+#menu-bar ul{
+  display:flex;
+}
+#menu-bar ul li{
+  list-style: none;
+  text-decoration: none;
+}
+.hidden{
+  display: none;
+}
