@@ -681,6 +681,34 @@ display: flex;
 }
 #main-shopping header #shopping-item{
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#shopping-item button{
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: white;
+  border: 1px solid rgba(211, 213, 215, .8);
+  vertical-align: top;
+  cursor: pointer;
+}
+#shopping-item .prev::before, #shopping-item .next::before{
+  content: ' ';
+  display: block; 
+  background-image: url(./sp_main.png);
+  background-size: 452px 436px;
+  background-position: -179px -329.5px;
+  background-repeat: no-repeat;
+  width: 15px;
+  height: 15px;
+}
+#shopping-item .prev:hover, #shopping-item .next:hover{
+  filter: brightness(0.99);
+}
+#shopping-item .prev::before{
+  transform: rotate(180deg);
 }
 #main-shopping header .text{
   display: inline-block;
