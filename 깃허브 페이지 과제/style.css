@@ -1,11 +1,27 @@
 body{
   color:white;
+  margin: 0;
+  padding: 0;
+}
+body a{
+  text-decoration: none;
+  color: white;
 }
 header, main{
+  width: 100vw;
+  height: 66vh;
   background-color: black;
+}
+header{
+  height:7vh;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
 }
 #menu-bar{
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #menu-bar #logo{
   padding: 10px 0;
@@ -13,8 +29,13 @@ header, main{
 #menu-bar #logo > img{
   width: 50px;
   height: 50px;
-  margin-left: 150px;
   filter: invert(100%)
+}
+#menu-bar button{
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 1rem;
 }
 #menu-bar ul{
   display:flex;
@@ -23,6 +44,190 @@ header, main{
   list-style: none;
   text-decoration: none;
 }
+#menu-bar ul li .check{
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  margin: 0;
+  position:relative;
+  left: -14px;
+  bottom: 4px;
+}
+#menu-bar ul li :nth-child(1),#menu-bar ul li :nth-child(2),#menu-bar ul li :nth-child(3),#menu-bar ul li :nth-child(4),#menu-bar ul li :nth-child(5),#menu-bar ul li :nth-child(6){
+  margin-right: 15px;
+}
+#search-sign-in{
+  display: flex;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #797979;
+  opacity: 0.6;
+  width: 300px;
+  padding: 5px;
+}
+.search-input {
+  color:#cccaca;
+  border: none;
+  padding: 5px;
+  font-size: 16px;
+  outline: none;
+  flex: 1;
+  background: transparent;
+}
+.search-input::placeholder {
+  color:#dbd6d6;
+}
+.search-button {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: transparent;
+  color: #cccaca;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-button:hover {
+  color: #555;
+  border-color: #888;
+}
+#sign-in{
+margin-left: 15px;
+margin-top: 10px;
+}
+#sign-up{
+  background-color: black;
+  outline: white;
+  border: white 1px solid;
+  border-radius: 7px;
+  margin-left: 15px;
+  color: white;
+  font-size: 1em;
+}
+#main-wrapper{
+  height: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  gap:10vw;
+}
+#main-wrapper{
+  display: flex;
+  justify-content: center;
+}
+#description > h1{
+  font-size: 5rem;
+  font-weight: 900;
+}
+#description > h2{
+  color:gray;
+  font-size: 1.5rem;
+  font-weight: 30;
+}
+#form-wrapper{
+  height:80%;
+  width: 30%;
+  max-width: 420px;
+  min-height: 665px;
+  background-color: white;
+  color: black;
+  border-radius: 7px;
+  display: grid;
+  grid-template-rows: 9fr 1fr;
+  align-items: center;
+  font-size: 0.7rem;
+}
+#form-wrapper a {
+  color:rgb(8, 148, 204);
+}
+#form-wrapper a:visited{
+  color:rgb(8, 148, 204);
+}
+#form-wrapper > form{
+  display: grid;
+  margin: 20px 10px;
+  height: 80%;
+  padding: 0;
+  align-content: space-between;
+  justify-items: stretch;
+  color:rgb(77, 76, 76);
+}
+#form-wrapper > form input{
+  height:50px;
+  border-radius: 7px;
+  border: rgb(207, 206, 206) solid 1px;
+}
+#form-wrapper > form label{
+  font-size: 1rem;
+  font-weight: 900;
+  color: black;
+}
+#form-wrapper > form input:focus-within,#form-wrapper > form input:valid{
+  background-color: rgb(209, 242, 255);
+}
+#form-wrapper > form button{
+  height:90px;
+  border-radius: 7px;
+  background-color: rgb(26, 168, 62);
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+#Terms-of-Service{
+  margin: 0 15px;
+  width: 90%;
+  text-align: center;
+  color: rgb(172, 168, 168);
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  width: 73%;
+  opacity: 0.7;
+  text-decoration: none;
+  display: block;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 0.7;
+}
+.strong{
+  color:white;
+}
+.visible{
+  display:flexbox;
+}
 .hidden{
   display: none;
+}
+#img-wrapper img{
+  position: absolute;
+  top:52em;
+  right:2em;
 }

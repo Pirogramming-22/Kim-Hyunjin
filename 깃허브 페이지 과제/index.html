@@ -13,23 +13,65 @@
     <div id="menu-bar">
       <a href="#" id="logo"><img src="./github-logo.png" alt="logo"></a>
       <ul>
-        <li><button>why GitHub?<div class="hidden"></div></button></li>
-        <li><a>Team</a></li>
-        <li><a>Enterprise</a></li>
-        <li><button>Explore<div class="hidden"></div></button></li>
-        <li><a>Marketplace</a></li>
-        <li><button>Pricing<div class="hidden"></div></button></li>
+        <li class="dropdown"><button>Why GitHub</button><img src="./check_photo.png" class = "check" alt="check">
+          <div class="dropdown-content">
+          <a href="#">easy</a>
+          <a href="#">fun</a>
+        </div>
+      </li>
+        <li><a href="#">Team</a></li>
+        <li><a href="#">Enterprise</a></li>
+        <li class="dropdown"><button>Explore</button><img src="./check_photo.png" class = "check" alt="check">
+          <div class="dropdown-content">
+          <a href="#">Github</a>
+          <a href="#">Starred</a>
+        </div>
+      </li>
+        <li><a href="#">Marketplace</a></li>
+        <li class="dropdown"><button>Pricing</button><img src="./check_photo.png" class = "check" alt="check">
+          <div class="dropdown-content">
+          <a href="#">Copilot</a>
+          <a href="#">Premium</a>
+        </div>
+      </li>
       </ul>
     </div>
     <div id="search-sign-in">
-
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search GitHub">
+        <button class="search-button">/</button>
+    </div>
+      <a href="#" id="sign-in">Sign in</a>
+      <button id="sign-up">Sign up</button>
     </div>
   </header>
   <main>
-
+    <div id="main-wrapper">
+      <div id="description">
+        <h1>Built for<br>developers</h1>
+        <h2>GitHub is a development platform inspired by the <br>way you work.From <span class="strong">open source</span> to <span class="strong">business</span>, you <br>can host and review code, manage projects, and <br>build software alongside 50 million developers.</h2>
+      </div>
+      <div id="form-wrapper">
+        <form action="submit" method="post" id="signupForm">
+          <label for="user-name">Username</label>
+          <input type="text" id="user-name" required="">
+          <label for="user-email">Email</label>
+          <input type="email" id="user-email" required="">
+          <label for="user-password">Password</label>
+          <input type="password" id="user-password" required="">
+          <p>Make suer it's at least 15 characters OR at least 8 characters includeing a number and a lowercase letter. <a href="">Learn more.</a></p>
+          <button type="submit" form="signupForm">Sign up for GitHub</button>
+        </form>
+        <div id="Terms-of-Service">
+          By clicking "Sign up for GitHub", you agree to our <a href="">Terms of Service</a> and <a href="">Privacy Statement</a>. We'll occasionally send you account related emails.
+        </div>
+      </div>
+    </div>
   </main>
   <footer>
-
+    <div id="img-wrapper">
+      <img src="./footer.png" alt="footer-img">
+    </div>
   </footer>
 </body>
 </html>
