@@ -705,6 +705,17 @@ display: flex;
   height: 50px;
   padding: 15px 20px 14px;
 }
+#main-shopping-grid{
+  margin-top: 20px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: 90px 95px 185px;
+  grid-template-columns: 250px 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 20px;
+}
+.item:nth-child(4),.item:nth-child(6),.item:nth-child(8),.item:nth-child(10),.item:nth-child(12){
+  grid-row: 1 / 3;
+}
 #main-shopping footer .text{
   min-width: 176px;
 }
