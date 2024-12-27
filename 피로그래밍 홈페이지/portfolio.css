@@ -1,1 +1,194 @@
 @import "./reset.css";
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  max-width: 1400px;
+  margin: 0 auto;
+  color:white;
+}
+
+header, main{
+  padding: 0 40px;
+  background: black;
+}
+
+header{
+  display: fixed;
+}
+
+#header-container {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+
+.content-hover:hover{
+  position: relative;
+  top:-2px;
+}
+
+#logo{
+  width: 40px;
+  height: 40px;
+}
+
+#menu{
+  display: flex;
+  flex-direction: row;
+  font-size: 1.8rem;
+}
+
+.list-menu{
+  padding-right: 10px;
+  font-weight: 700;
+}
+
+.checked{
+  color: #0bec12;
+}
+
+#hamburger{
+  display: none;
+}
+
+footer{
+  background: #333333;
+  width: 100%;
+  padding: 40px;
+}
+
+#footer-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 40px;
+  font-size: 1.4rem;
+}
+
+#info{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-right: 100px;
+}
+
+#rule-wrapper > a{
+  margin-right: 10px;
+}
+
+#footer-menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex:1;
+}
+
+#footer-menu li{
+  border-right: 1px solid #606060;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+#footer-menu li:last-of-type{
+  border: 0;
+}
+
+#sns-logo-container{
+  display: flex;
+  flex-direction: row;
+}
+
+#sns-logo-container a{
+  display: flex;
+  align-items: center;
+}
+
+.sns-logo-solo{
+  width: 30px;
+  height: 30px;
+  background: black;
+  border-radius: 50%;
+  position: relative;
+  padding: 0;
+  margin-inline-end: 1rem;
+}
+
+.sns-logo{
+  width: 70%;
+  height: 70%;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+#gmail-contact a{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#gmail-contact a div{
+  margin-right: 10px;
+}
+
+#bottom{
+  opacity: 0.8;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 16px;
+  background: #333333;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  #footer-container{
+    flex-direction: column;
+  }
+
+  #info{
+    padding-bottom: 40px;
+  }
+
+}
+
+@media (max-width: 660px){
+  #menu{
+    display: none;
+  }
+
+  #hamburger{
+    display:flex;
+    flex-direction: column;
+    width: 30px;
+  }
+
+  #hamburger div{
+    background-color: white;
+    width: 100%;
+    height: 3px;
+    margin: 3px 0;
+  }
+
+  #hamburger div:nth-child(1){
+    width: 50%;
+  }
+
+  #hamburger div:last-child{
+    width: 75%;
+  }
+}
+
+
+@media (max-width: 480px) and (min-width: 350px){
+  #footer-menu{
+    display: none;
+  }
+}
