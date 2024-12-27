@@ -1,5 +1,9 @@
 @import "./reset.css";
 
+*{
+  box-sizing: border-box;
+}
+
 html{
   font-size: 62.5%;
 }
@@ -17,6 +21,10 @@ header, main{
 
 header{
   display: fixed;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%,rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0) 100%);
+  height: 9rem;
+  padding: 0 40px;
+  z-index: 10;
 }
 
 #header-container {
@@ -24,6 +32,7 @@ header{
   justify-content: space-between;
   text-align: center;
   align-items: center;
+  height: 100%;
 }
 
 .content-hover:hover{
@@ -54,6 +63,8 @@ header{
 #hamburger{
   display: none;
 }
+
+/*main 자리*/
 
 footer{
   background: #333333;
@@ -93,7 +104,6 @@ footer{
 #footer-menu li{
   border-right: 1px solid #606060;
   padding: 1rem;
-  box-sizing: border-box;
 }
 
 #footer-menu li:last-of-type{
