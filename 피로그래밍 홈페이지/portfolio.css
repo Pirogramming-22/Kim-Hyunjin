@@ -238,8 +238,8 @@ section{
 }
 
 .person-photo-wrapper{
-  width:8rem;
-  height:6rem;
+  width:10rem;
+  height:8rem;
   border-radius: 7px;
   overflow: hidden;
 }
@@ -372,6 +372,26 @@ footer{
     padding-bottom: 40px;
   }
 
+  .card{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-top{
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  .person-photo-wrapper{
+    width:15rem;
+    height:10rem;
+  }
+
 }
 
 @media (max-width: 660px){
@@ -400,12 +420,6 @@ footer{
     width: 75%;
   }
 
-  .grid-container{
-    display:grid;
-    grid-template-columns: repeat(2,50%);
-    gap:1rem;
-    padding:40px 0;
-  }
 }
 
 
@@ -419,5 +433,11 @@ footer{
     grid-template-columns: repeat(1,100%);
     gap:1rem;
     padding:40px 0;
+  }
+
+  .card-bottom{
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    gap:5px;
   }
 }
