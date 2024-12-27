@@ -6,6 +6,7 @@
 
 html{
   font-size: 62.5%;
+  background: black;
 }
 
 body{
@@ -20,7 +21,8 @@ header, main{
 }
 
 header{
-  display: fixed;
+  width: 100%;
+  position: fixed;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%,rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0) 100%);
   height: 9rem;
   padding: 0 40px;
@@ -64,7 +66,210 @@ header{
   display: none;
 }
 
+#replacer{
+  width: 100%;
+  height: 9rem;
+  position: relative;
+}
+
 /*main 자리*/
+main{
+  width:100%;
+  padding: 0 40px;
+}
+
+main nav{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+#main-chapter{
+  font-size: 2.2rem;
+}
+
+#next-chapter{
+  position: absolute;
+  right:40px;
+  padding-right: 1rem;
+}
+
+section{
+  width: 100%;
+  padding: 0 40px;
+}
+
+.grid-container{
+  display:grid;
+  grid-template-columns: repeat(1,100%);
+  gap:1rem;
+  padding:40px 0;
+}
+
+.card{
+  background-color: #333333;
+  border-radius: 4px;
+  position: relative;
+}
+
+@keyframes image-size-up{
+  0%{transform: scale(1.03);}
+  25%{transform: scale(1.06);}
+  50%{transform: scale(1.09);}
+  75%{transform: scale(1.11);}
+  100%{transform: scale(1.13);}
+}
+
+@keyframes hamburger-twist-one {
+  0% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+  15% {
+    transform-origin: left;
+    transform: scaleX(0.85);
+  }
+  30% {
+    transform-origin: left;
+    transform: scaleX(0.8);
+  }
+  45%{
+    transform-origin: left;
+    transform: scaleX(0.7);
+  }
+  60% {
+    transform-origin: left;
+    transform: scaleX(0.65);
+  }
+  75%{
+    transform-origin: left;
+    transform: scaleX(0.6);
+  }
+  90% {
+    transform-origin: left;
+    transform: scaleX(0.5);
+  }
+}
+
+@keyframes hamburger-twist-two {
+  0% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+  15% {
+    transform-origin: right;
+    transform: scaleX(0.85);
+  }
+  30% {
+    transform-origin: right;
+    transform: scaleX(0.8);
+  }
+  45%{
+    transform-origin: right;
+    transform: scaleX(0.7);
+  }
+  60% {
+    transform-origin: right;
+    transform: scaleX(0.65);
+  }
+  75%{
+    transform-origin: right;
+    transform: scaleX(0.6);
+  }
+  90% {
+    transform-origin: right;
+    transform: scaleX(0.5);
+  }
+}
+
+.card:hover img{
+  animation: image-size-up 0.7s;
+}
+
+.card:hover #card-hamburger div:first-of-type{
+  animation: hamburger-twist-one 0.7s;
+}
+
+.card:hover #card-hamburger div:last-of-type{
+  animation: hamburger-twist-two 0.7s;
+}
+
+.card-top{
+  display: flex;
+  font-size: 1.1rem;
+  padding: 5px;
+}
+
+.person-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  left:7px;
+}
+
+.person-info div{
+  padding: 0.5rem;
+}
+
+#description{
+  color: #606060;
+}
+
+.card-bottom{
+  display: flex;
+  flex-direction: row;
+}
+
+.card-bottom div:first-of-type{
+  font-size: 1.2rem;
+  background-color: aqua;
+  filter: brightness(1);
+  color: white;
+}
+
+.card-bottom div{
+  background-color:#606060;
+  filter: brightness(0.7);
+  border-radius: 4px;
+  color: black;
+  padding: 2px;
+  margin: 2px;
+}
+
+.person-photo-wrapper{
+  width:8rem;
+  height:6rem;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.card-top img{
+  width:100%;
+  height:100%;
+  overflow: hidden;
+}
+
+.card-bottom{
+  font-size: 1.2rem;
+  padding:10px;
+}
+
+#card-hamburger{
+  display:flex;
+  flex-direction: column;
+  width: 18px;
+  position:absolute;
+  top: 3px;
+  right: 3px;
+}
+
+#card-hamburger div{
+  background-color: #606060;
+  width: 100%;
+  height: 2px;
+  margin: 2px 0;
+}
 
 footer{
   background: #333333;
@@ -194,11 +399,25 @@ footer{
   #hamburger div:last-child{
     width: 75%;
   }
+
+  .grid-container{
+    display:grid;
+    grid-template-columns: repeat(2,50%);
+    gap:1rem;
+    padding:40px 0;
+  }
 }
 
 
-@media (max-width: 480px) and (min-width: 350px){
+@media (max-width: 480px){
   #footer-menu{
     display: none;
+  }
+
+  .grid-container{
+    display:grid;
+    grid-template-columns: repeat(1,100%);
+    gap:1rem;
+    padding:40px 0;
   }
 }
