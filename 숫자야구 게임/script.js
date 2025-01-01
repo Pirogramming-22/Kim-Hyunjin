@@ -37,7 +37,7 @@ function game_set(){
         completed = false;
     }
   }
-  console.log(answer);
+  //console.log(answer);
   attempts.innerHTML = `${attempt.toString()}`;
 };
 
