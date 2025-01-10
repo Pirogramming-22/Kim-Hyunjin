@@ -1,0 +1,81 @@
+@import "./reset.css";
+
+:root{
+  --big-font-size : 40px;
+  --mid-font-size : 25px;
+  --small-font-size : 15px;
+  --color-red : #ff7070;
+  --background-color : #e7e7e7;
+  --border-color : #cdcdcd;
+  --padding-size : 15px;
+  --border-radius : 4px;
+  --margin-size : 35px;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: var(--padding-size);
+}
+
+#header-logo{
+  font-size: var(--big-font-size);
+  font-weight: bold;
+}
+
+.red-writing{
+  color: var(--color-red);
+}
+
+#new-review{
+  font-size: var(--small-font-size);
+}
+
+main{
+  margin-top: var(--margin-size);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70dvh;
+}
+
+.form-container{
+  position: relative;
+  width: 50dvw;
+  height: 100%;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  font-size: var(--small-font-size);
+}
+
+.form-container > hr{
+  width: 63%;
+  border: 2px solid var(--border-color);
+}
+
+.form-title{
+  margin: var(--padding-size) 0;
+  font-size: var(--mid-font-size);
+  text-align: center;
+}
+
+.form-item{
+  margin:var(--margin-size);
+}
+
+.btn-submit{
+  width: 8dvw;
+  height: 2dvh;
+  background-color: #ffffff;
+  border-radius: var(--border-radius);
+  position: absolute;
+  right: var(--margin-size);
+  bottom: var(--margin-size);
+}
+
+#content{
+  width: 100%;
+}

@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movie reviews</title>
+    <link rel="stylesheet" href="{% static 'css/create.css' %}">
+</head>
+<body>
+  <header>
+    <div id="header-logo">
+      <a href="/">my<span class="red-writing">Movie</span>reviews</a>
+    </div>
+    <div id="new-review">
+      <a href="{% url 'reviews:review_create' %}">Add a New review</a>
+    </div>
+  </header>
+  <hr/>
+  <main>
+    <div class="form-container">
+      <div class="form-title"><span class="red-writing">Movie</span> Review 🍿</div>
+      <hr>
+      <form action="{% url 'reviews:review_update' review.pk %}" method="post">
+          {% csrf_token %}
+          <div class="form-item">
+              <label for="title" class="form-label">제목 : </label>
+              <input type="text" name="title" class="form-control" id="title" value="{{review.title}}">
+          </div>
+          <div class="form-item">
+            <label for="created_at" class="form-label">개봉년도 : </label>
+            <input type="date" name="created_at" class="form-control" id="created_at" value="{{ review.created_at|date:'Y-m-d' }}">
+          </div>
+          <div class="form-item">
+            <label for="genre" class="form-label">장르 : </label>
+            <select name="genre" id="genre">
+              <option value="">---------------</option>
+              <option value="action" {% if review.genre == "action" %}selected{% endif %}>액션</option>
+              <option value="criminal" {% if review.genre == "criminal" %}selected{% endif %}>범죄</option>
+              <option value="SF" {% if review.genre == "SF" %}selected{% endif %}>SF</option>
+              <option value="comedy" {% if review.genre == "comedy" %}selected{% endif %}>코미디</option>
+              <option value="romance" {% if review.genre == "romance" %}selected{% endif %}>로맨스</option>
+              <option value="thriller" {% if review.genre == "thriller" %}selected{% endif %}>스릴러</option>
+              <option value="animation" {% if review.genre == "animation" %}selected{% endif %}>애니메이션</option>
+              <option value="musical" {% if review.genre == "musical" %}selected{% endif %}>뮤지컬</option>
+            </select>
+          </div>
+          <div class="form-item">
+            <label for="rate" class="form-label">별점 : </label>
+            <input type="number" name="rate" class="form-control" id="rate" value={{review.rate}} min="1" max="5" step="0.1">
+          </div>
+          <div class="form-item">
+            <label for="running_time" class="form-label">러닝타임 : </label>
+            <input type="number" name="running_time" class="form-control" id="running_time" value={{review.running_time}}>
+          </div>
+          <div class="form-item">
+            <label for="content" class="form-label">리뷰 : </label><br>
+            <textarea class="form-control" name="content" id="content" rows="12">{{review.content}}</textarea>
+          </div>
+          <div class="form-item">
+              <label for="director" class="form-label">감독 : </label>
+              <input type="text" name="director" class="form-control" id="director" value="{{review.director}}">
+          </div>
+          <div class="form-item">
+              <label for="actor" class="form-label">배우 : </label>
+              <input type="text" name="actor" class="form-control" id="actor" value="{{review.actor}}">
+          </div>
+          <button type="submit" class="btn btn-submit">Submit</button>
+      </form>
+  </div>
+  </main>
+</body>
+</html>
