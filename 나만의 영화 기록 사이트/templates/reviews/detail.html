@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movie reviews</title>
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+</head>
+<body>
+  <header>
+    <div id="header-logo">
+      <a href="/">my<span class="red-writing">Movie</span>reviews</a>
+    </div>
+    <div id="new-review">
+      <a href="{% url 'reviews:review_create' %}">Add a New review</a>
+    </div>
+  </header>
+  <hr/>
+  <main>
+    <div id="summary-container">
+        <div class = "summary-header">
+        <h1>{{ review.title }}</h1>
+        <aside>
+          <a href="{% url 'reviews:review_update' review.pk %}">수정&nbsp;</a>
+          <form action = "{% url 'reviews:review_delete' review.pk%}" method="post">
+          {% csrf_token %}
+          <button type="submit">
+              삭제
+          </button>
+      </form></aside>
+        </div>
+        <article class="basic-info"> 
+          <img src = "{%static 'media/avatar.jpg'%}" alt="poster">
+          <section class = "info-text">
+            <p><span class="summary-index">개봉년도 </span>{{ review.created_at }}</p>
+            <p><span class="summary-index">감독 </span>{{ review.director}}</p>
+            <p><span class="summary-index">주연 </span>{{ review.actor }}</p>
+            <p><span class="summary-index">장르 </span>{{ review.genre }}</p>
+            <p><span class="summary-index">별점 </span>{{ review.rate }}</p>
+            <p><span class="summary-index">러닝타임 </span>{{ time }}시간 {{ minute }}분</p>
+          </section>
+        </article>
+        <article class="detail-evaluation"> 
+          <p>{{ review.content }}</p>
+        </article>
+      </div>
+  </main>
+</body>
+</html>

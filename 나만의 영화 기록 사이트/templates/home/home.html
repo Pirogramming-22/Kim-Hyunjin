@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movie reviews</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+  <header>
+    <div id="header-logo">
+      <a href="/">my<span class="red-writing">Movie</span>reviews</a>
+    </div>
+    <div id="new-review">
+      <a href="{% url 'reviews:review_create' %}">Add a New review</a>
+    </div>
+  </header>
+  <hr/>
+  <main>
+    <div id="summary-container">
+    {% for review in reviews %}
+      <div class = "summary">
+        <img src = "{%static 'media/avatar.jpg'%}" alt="poster">
+        <article class="description"> 
+          <h1><a href="{% url 'reviews:review_detail' review.pk %}">{{ review.title }}</a></h1>
+          <p><span class="summary-index">개봉년도 </span>{{ review.created_at }}</p>
+          <p><span class="summary-index">장르 </span>{{ review.genre }}</p>
+          <p><span class="summary-index">별점 </span>{{ review.rate }}</p>
+        </article>
+      </div>
+    {% empty %}
+      <p>리뷰가 존재하지 않습니다.</p>
+    {% endfor %}
+    </div>
+  </main>
+</body>
+</html>
