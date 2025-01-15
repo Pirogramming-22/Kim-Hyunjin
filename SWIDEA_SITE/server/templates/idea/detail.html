@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {%block head%}
+        <title>My SW Idea Manage</title>
+    {%endblock%}
+</head>
+<body>
+    {%block content%}
+    <div id="block-content-container">
+        <header>
+            <h1 class="highlighted-text">Idea Detail</h1>
+            <p>아이디어 세부내용 페이지 입니다. 당신이 구현하려 한 아이디어들을 자세히 살펴보세요.</p>
+        </header>
+        <main class ="detail-main">
+            <div class="detail-box">
+                {% if idea.image.url != '' %}
+                    <img src="{{idea.image.url}}" alt="아이디어 이미지"/>
+                {% else %}
+                    <img src="{% static 'idea/image/no_img.png' %}" alt="대체 텍스트" />
+                {% endif %}
+
+                <div class="detail-description-box">
+                    <div id="title-like">
+                        <h1>{{idea.title}}</h1>
+                            <button class="favorite-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16 2l4.59 9.33 10.41 1.51-7.5 7.31 1.77 10.35L16 23.39 6.73 30.5 8.5 20.15 1 12.84l10.41-1.51L16 2z"></path>
+                                </svg>
+                            </button>
+                    </div>
+
+                    <ol>
+                        <li>&nbsp;아이디어 관심도<br><p>{{idea.interest}}</p></li>
+                        <li>&nbsp;예상 개발 툴<br><p><a href="{% url 'developTool:detail' idea.devtool.pk %}">{{idea.devtool}}</a></p></li>
+                        <li>&nbsp;아이디어 설명<br><p>{{idea.content}}</p></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="detail-btns">
+                <button class="btn" id="delete-btn"  onclick="window.location.href='{% url 'idea:delete' idea.pk %}'">삭제</button>
+                <button class="btn" id="list-btn" onclick="window.location.href='{% url 'idea:list' %}'">목록</button>
+                <button class="btn" id="edit-btn"  onclick="window.location.href='{% url 'idea:update' idea.pk %}'">수정</button>
+            </div>
+        </main>
+    </div>
+    <script src="{% static 'idea/js/detail.js' %}"></script>
+    {%endblock%}
+</body>
+</html>
