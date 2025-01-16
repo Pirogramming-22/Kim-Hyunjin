@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {%block head%}
+        <title>My SW Idea Manage</title>
+    {%endblock%}
+</head>
+<body>
+    {%block content%}
+    <div id="block-content-container">
+        <header>
+            <h1 class="highlighted-text">Idea Register</h1>
+            <p>아이디어 등록 페이지 입니다. 당신의 아이디어를 잊지 말고 기록하세요!</p>
+        </header>
+        <main class ="register-main">
+             <form
+            action="{% url 'idea:create' %}"
+            method="post"
+            enctype="multipart/form-data">
+                 {%csrf_token%}
+                 <article class="create-form-arrange">
+                     <div class="create-form-container">
+                     <p>{{ form.title.label_tag }}</p>
+                     <p>{{ form.title }}</p>
+                     <p>{{ form.image.label_tag }}</p>
+                     <p>{{ form.image }}</p>
+                     <p>{{ form.content.label_tag }}</p>
+                     <p id = "form-content">{{ form.content }}</p>
+                     <p>{{ form.interest.label_tag }}</p>
+                     <p>{{ form.interest }}</p>
+                     <p>{{ form.devtool.label_tag }}</p>
+                     <p>{{ form.devtool }}</p>
+                    </div>
+                     <button class="btn-register">SUBMIT</button>
+                 </article>
+            </form>
+        </main>
+    </div>
+    <script src="{% static 'idea/js/create.js' %}"></script>
+    {%endblock%}
+</body>
+</html>

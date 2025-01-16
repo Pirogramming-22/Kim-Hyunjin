@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {%block head%}
+        <title>My SW Idea Manage</title>
+    {%endblock%}
+</head>
+<body>
+    {%block content%}
+    <div id="block-content-container">
+        <header>
+            <h1 class="highlighted-text">Idea List</h1>
+            <p>나의 아이디어를 잊지 말고 기록해보세요</p>
+        </header>
+        <main>
+            <select name="sorting" id="sorting" onchange="location.href='{% url 'idea:list' %}?sorting=' + this.value">
+              <option value="">----정렬기준----</option>
+              <option value="starsort">찜하기순</option>
+              <option value="registersort">등록순</option>
+              <option value="recentsort">최신순</option>
+              <option value="namesort">이름순</option>
+            </select>
+            <div class="four-content-container-base" id="four-content-container">
+                {% for idea in ideas %}
+                <div class="idea-content-container">
+                    {% if idea.image.url != '' %}
+                    <img src="{{idea.image.url}}" alt="아이디어 이미지" class="idea-img"/>
+                    {% else %}
+                    <img src="{% static 'idea/image/no_img.png' %}" alt="대체 텍스트" />
+                    {% endif %}
+                    <button class="favorite-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16 2l4.59 9.33 10.41 1.51-7.5 7.31 1.77 10.35L16 23.39 6.73 30.5 8.5 20.15 1 12.84l10.41-1.51L16 2z"></path>
+                        </svg>
+                    </button>
+                    <div class="summary-description-box">
+                        <h3><a href="{% url 'idea:detail' idea.pk %}">{{idea.title}}</a></h3>
+                        <div class="hr-div"></div>
+                        <p>예상 개발 툴 : </p>
+                        <p>아이디어 관심도 : <button class="plus-btn">+</button><span>{{idea.interest}}</span><button class="minus-btn">-</button></p>
+                    </div>
+                </div>
+            {% empty %}
+            <p>아이디어가 존재하지 않습니다.</p>
+            {% endfor %}
+                {%comment%} checkbox for문 생성?{%endcomment%}
+            </div>
+        </main>
+    </div>
+    <script src="{% static 'idea/js/list.js' %}"></script>
+    {%endblock%}
+</body>
+</html>

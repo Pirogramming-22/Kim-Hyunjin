@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {%block head%}
+        <title>My SW Idea Manage</title>
+    {%endblock%}
+</head>
+<body>
+    {%block content%}
+    <div id="block-content-container">
+        <header>
+            <h1 class="highlighted-text">Idea Detail</h1>
+            <p>아이디어 세부내용 페이지 입니다. 당신이 구현하려 한 아이디어들을 자세히 살펴보세요.</p>
+        </header>
+        <main class ="detail-main">
+            <div class="detail-devtool-container">
+                <div class="detail-devtool-box">
+                  <h1>{{devtool.name}}</h1>
+                  <div class="devtool-article">
+                    <div class="vertical-line"></div>
+                    <div class="devtool-article-right">
+                      <p>{{devtool.kind}}</p>
+                      <p>{{devtool.content}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="detail-idea-list-box">
+                  <h1> > 만들 수 있는 SW 목록 </h1>
+                  {% for idea in ideas %}
+                  <a href = "{% url 'idea:detail' idea.pk %}">{{idea.title}}</a><br>
+                  {% endfor %}
+                </div>
+            </div>
+            <div class="detail-btns">
+                <button class="btn" id="delete-btn" onclick="window.location.href='{% url 'developTool:delete' devtool.pk %}'">삭제</button>
+                <button class="btn" id="list-btn" onclick="window.location.href='{% url 'developTool:list' %}'">목록</button>
+                <button class="btn" id="edit-btn" onclick="window.location.href='{% url 'developTool:update' devtool.pk %}'">수정</button>
+            </div>
+        </main>
+    </div>
+    {%endblock%}
+</body>
+</html>
