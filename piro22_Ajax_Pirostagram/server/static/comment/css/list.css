@@ -1,0 +1,135 @@
+@import "../../post/css/reset.css";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+}
+
+.header__rightButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.header__username {
+  font-size: 1.6rem;
+}
+
+.container{
+  width: 390px;
+  height: 100dvh;
+  margin: auto;
+  background: black;
+  overflow: hidden;
+}
+
+.profile__image {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #c913b9 0%, #f9373f 50%, #fecd00 100%);
+  overflow: hidden;
+  padding: 3px;
+}
+
+.profile__image > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.filterbtn{
+  margin: 5px;
+}
+
+.heart-icon {
+  fill: none;
+  stroke: white;
+  stroke-width: 1;
+}
+
+.comment-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: normal;
+  background: rgba(192, 192, 192, 0.8);
+  height :calc(100dvh - 30px);
+  border-radius: 35px 35px 0 0;
+  position: relative;
+}
+
+.cc-title{
+  font-size: 15px;
+  font-weight: bold;
+  border-bottom:slategrey 2px solid ;
+  width: 100%;
+  text-align: center;
+  padding: 8px;
+}
+
+.horizontal-line{
+  width: 90px;
+  height: 5px;
+  background: slategrey;
+  border: slategrey 2px solid;
+  border-radius: 5px;
+  margin: 5px;
+}
+.one-comment{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-comment-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.comment-info p, a{
+  margin-bottom: 5px ;
+  font-size: 12px;
+}
+
+.right-comment-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-input-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;;
+  width: 100%;
+  padding: 5px;
+  position: absolute;
+  bottom: 15px;
+}
+
+.comment-input{
+  width:85%;
+  height: 30px;
+  border-radius: 15px;
+}
+
+.comment-button{
+  background: dodgerblue;
+  color: white;
+  width: 15%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+
+

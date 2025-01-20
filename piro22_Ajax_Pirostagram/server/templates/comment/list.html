@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'comment/css/list.css'%}">
+    <title>Pirostagram</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <button class="header__goBackButton" onclick="window.location.href='{% url 'post:main' %}'">
+          <img src="{%static 'post/img/goBack.svg'%}" alt="뒤로 가기 버튼" />
+        </button>
+        <div class="header__username">Pirogrammer</div>
+        <div class="header__rightButtons">
+        </div>
+      </header>
+      <main>
+        <div class="comment-container">
+              <div class="horizontal-line"></div>
+              <h1 class="cc-title">댓글</h1>
+              {% for comment in comments %}
+              <div class="one-comment comment-{{comment.pk}}">
+                 <div class="left-comment-container">
+                  <div class="profile__image">
+                    <img src="{% static 'post/img/profilePicture.png' %}" alt="" >
+                  </div>
+                   <div class="comment-info">
+                      <p>Pirogramming</p>
+                     <p>{{comment.content}}</p>
+                     <a href="">답글 달기</a> <a href="{% url 'comment:delete' comment.pk postid %}" style="color: gray; font-size: 10px">댓글 삭제</a>
+                   </div>
+                </div>
+                <div class="right-comment-container">
+                  <button class="heartButton filterbtn" data-pk = "{{comment.pk}}">
+                    {% if comment.clicked %}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="heart-icon" data-pk = "{{comment.pk}}">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" data-pk = "{{comment.pk}}" fill="red" stroke="red">
+                      </svg>
+                    {% else %}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="heart-icon" data-pk = "{{comment.pk}}">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" data-pk = "{{comment.pk}}">
+                      </svg>
+                    {% endif %}
+                  </button>
+                  {% if comment.like != 0 %}
+                  <p class="like-num-{{ comment.id }}">{{comment.like}}</p>
+                  {% else %}
+                  <p class="like-num-{{ comment.id }}"></p>
+                  {% endif %}
+                </div>
+              </div>
+              {% empty %}
+              <p>아직 댓글이 존재하지 않습니다.</p>
+              {% endfor %}
+
+            <div class="comment-input-container">
+              <input type="text" id="comment-input" class="comment-input" data-pk = "{{ postid }}" placeholder="댓글을 입력하세요" />
+              <button class="comment-button" onclick="submitComment()">등록</button>
+            </div>
+            </div>
+
+      </main>
+    </div>
+    <script src = 'https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js'></script>
+  <script src="{% static 'comment/js/list.js' %}"></script>
+  </body>
+</html>

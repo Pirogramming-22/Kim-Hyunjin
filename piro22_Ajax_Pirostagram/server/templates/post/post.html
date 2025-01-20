@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="{%static 'post/css/style.css'%}">
+    <title>Pirostagram</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <button class="header__goBackButton">
+          <img src="{%static 'post/img/goBack.svg'%}" alt="뒤로 가기 버튼" />
+        </button>
+        <div class="header__username">Pirogrammer</div>
+        <div class="header__rightButtons">
+        </div>
+      </header>
+      <main>
+        {% for post in posts %}
+          <div class="post-container post-{{post.pk}}">
+            <div class="post-header">
+              <div class="header-left">
+                 <div class="profile__image">
+                  <img src="{% static 'post/img/profilePicture.png' %}" alt="" >
+                </div>
+              <p class="user-id">Pirogrammer</p>
+              </div>
+                <button class="moreButton">
+                  <img src="{%static 'post/img/more.svg'%}" alt="더보기 열기 버튼" />
+                </button>
+            </div>
+            <div class="post-img">
+              <img src={% static "post/img/pphoto" %}{{ post.pk }}.jpg alt="" class="post-photo">
+            </div>
+            <div class="post-btn">
+              <div class="btn-3">
+                <button class="heartButton filterbtn" data-pk = "{{post.pk}}">
+                  {% if post.clicked %}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="heart-icon" data-pk = "{{post.pk}}">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" data-pk = "{{post.pk}}" fill="red" stroke="red">
+                    </svg>
+                  {% else %}
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="heart-icon" data-pk = "{{post.pk}}">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" data-pk = "{{post.pk}}">
+                    </svg>
+                  {% endif %}
+                </button>
+                <button class="commentButton filterbtn" onclick="window.location.href='{% url 'comment:main' post.pk %}'"
+>
+                  <img src="{%static 'post/img/comment.svg'%}" alt="댓글 버튼" />
+                </button>
+                <button class="sendButton filterbtn">
+                  <img src="{%static 'post/img/plane.svg'%}" alt="공유 버튼" />
+                </button>
+              </div>
+              <button class="saveButton filterbtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 6.2C5 5.07989 5 4.51984 5.21799 4.09202C5.40973 3.71569 5.71569 3.40973 6.09202 3.21799C6.51984 3 7.07989 3 8.2 3H15.8C16.9201 3 17.4802 3 17.908 3.21799C18.2843 3.40973 18.5903 3.71569 18.782 4.09202C19 4.51984 19 5.07989 19 6.2V21L12 16L5 21V6.2Z" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <div class="post-content">
+              {% if post.like <= 1 and post.like > 0 %}
+                <p class = "like-num">Pirogramming 님이 좋아합니다.</p>
+              {% elif post.like != 0 %}
+                <p class = "like-num">Pirogramming 님외 {{ post.like|add:"-1" }} 명이 좋아합니다.</p>
+              {% else %}
+                <p class = "like-num"></p>
+              {% endif %}
+              <p>Pirogrammer {{post.content}}</p>
+              <a href="{% url 'comment:main' post.pk %}">댓글 모두 보기</a>
+              <p class ="content-date">{{ post.created_date|date:"Y년 m월 d일" }}</p>
+            </div>
+
+          </div>
+        {% endfor %}
+      </main>
+    </div>
+    <script src = 'https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js'></script>
+  <script src="{% static 'post/js/post.js' %}"></script>
+  </body>
+</html>
