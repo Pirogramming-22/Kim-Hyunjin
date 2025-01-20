@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84c1fa30-3944-4e95-969f-2c7ee56da893" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/static/post/img/alarm.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/static/post/img/goBack.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/static/post/img/more.svg" afterDir="false" />
-    </list>
+    <list default="true" id="84c1fa30-3944-4e95-969f-2c7ee56da893" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -137,7 +133,7 @@
       <updated>1737273771946</updated>
       <workItem from="1737273773199" duration="717000" />
       <workItem from="1737274503964" duration="2670000" />
-      <workItem from="1737292029006" duration="40687000" />
+      <workItem from="1737292029006" duration="40996000" />
     </task>
     <servers />
   </component>
