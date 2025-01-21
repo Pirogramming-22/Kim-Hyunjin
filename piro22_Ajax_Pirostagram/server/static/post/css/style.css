@@ -1,0 +1,102 @@
+@import "reset.css";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+}
+
+.header__rightButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.header__username {
+  font-size: 1.6rem;
+}
+
+.container{
+  width: 390px;
+  height: 100%;
+  margin: auto;
+  background: black;
+}
+
+.post-container{
+  margin-bottom: 5px;
+}
+
+.post-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px;
+}
+
+.header-left > p{
+  margin-left: 5px;
+}
+
+.moreButton{
+  width: 24px;
+  height: 24px;
+  transform: rotate(90deg);
+}
+
+.dot{
+  color: white;
+  width: 2px;
+  height: 2px;
+}
+
+.post-photo{
+  width: 390px;
+}
+
+.profile__image {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #c913b9 0%, #f9373f 50%, #fecd00 100%);
+  overflow: hidden;
+  padding: 3px;
+}
+
+.profile__image > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post-content{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: 5px;
+}
+
+.post-btn{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filterbtn{
+  margin: 5px;
+}
+
+.heart-icon {
+  fill: none;
+  stroke: white;
+  stroke-width: 1;
+}
